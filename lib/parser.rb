@@ -35,7 +35,7 @@ def parse_comma_delimited
 end
 
 def print_person(person)
-  puts "#{person[:last_name]} #{person[:first_name]} #{person[:middle_initial]} #{person[:gender]}"
+  puts "#{person[:last_name]} #{person[:first_name]} #{person[:middle_initial]} #{person[:gender]} #{person[:date_of_birth]} #{person[:favorite_color]}"
 end
 
 [
