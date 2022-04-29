@@ -22,6 +22,7 @@ end
 
 def parse_pipe_delimited
   read_file("assets/pipe.txt", PIPE_DELIMITER)
+  # hash[:date_of_birth], hash[:favorite_color] = hash[:favorite_color], hash[:date_of_birth]
 end
 
 
@@ -29,10 +30,10 @@ def parse_space_delimited
   read_file("assets/space.txt", SPACE_DELIMITER)
 end
 
-
 def parse_comma_delimited
   read_file("assets/comma.txt", COMMA_DELIMITER)
 end
+
 
 def print_person(person)
   puts "#{person[:last_name]} #{person[:first_name]} #{person[:middle_initial]} #{person[:gender]} #{person[:date_of_birth]} #{person[:favorite_color]}"
