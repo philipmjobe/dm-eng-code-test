@@ -16,17 +16,17 @@ def read_file(file, delimiter)
       gender: row[3],
       date_of_birth: row[4],
       favorite_color: row[5]
-    }
+    }.except(:middle_initial)
   end
 end
 
 def parse_pipe_delimited
-  read_file("assets/pipe.txt", PIPE_DELIMITER).delete("middle_initial")
+  read_file("assets/pipe.txt", PIPE_DELIMITER)
 end
 
 
 def parse_space_delimited
-  read_file("assets/space.txt", SPACE_DELIMITER).delete("middle_initial")
+  read_file("assets/space.txt", SPACE_DELIMITER)
 end
 
 
@@ -35,7 +35,7 @@ def parse_comma_delimited
 end
 
 def print_person(person)
-  puts "#{person[:last_name]} #{person[:first_name]} #{person[:gender]} #{person[:date_of_birth]} #{person[:favorite_color]}"
+  puts "#{person[:last_name]} #{person[:first_name]} #{person[:middle_initial]} #{person[:gender]} #{person[:date_of_birth]} #{person[:favorite_color]}"
 end
 
 [
