@@ -8,7 +8,7 @@ puts "Welcome to the file parser"
 
 
 def read_file(file, delimiter)
-  CSV.read(file, col_sep: delimiter ).map do |row|
+  CSV.read(file, col_sep: delimiter).map do |row|
     {
       last_name: row[0],
       first_name: row[1],
@@ -16,13 +16,12 @@ def read_file(file, delimiter)
       gender: row[3],
       date_of_birth: row[4],
       favorite_color: row[5]
-    }.except(:middle_initial)
+    }
   end
 end
 
 def parse_pipe_delimited
   read_file("assets/pipe.txt", PIPE_DELIMITER)
-  # hash[:date_of_birth], hash[:favorite_color] = hash[:favorite_color], hash[:date_of_birth]
 end
 
 
@@ -43,6 +42,6 @@ end
   parse_pipe_delimited,
   parse_space_delimited,
   parse_comma_delimited
-].flatten.sort{ |a, b| [a[:gender], a[:last_name]] <=> [b[:gender], b[:last_name]] }.each do |person|
+].flatten.sort{ |a, b| [a[:gender], a[:last_name]] <=> [b[:gender], b[:last_name]] }.map do |person|
   print_person(person)
 end
