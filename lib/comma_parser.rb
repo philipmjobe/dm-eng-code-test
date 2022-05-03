@@ -19,7 +19,7 @@ class CommaParser
         first_name: row[1],
         gender: row[2],
         favorite_color: row[3],
-        date_of_birth: Date.strptime(row[4], "%m/%d/%Y").strftime("%m/%d/%Y")
+        date_of_birth: Date.strptime(row[4], "%m/%d/%Y").strftime("%-m/%d/%Y")
       )
     end
   end

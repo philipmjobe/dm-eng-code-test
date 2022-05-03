@@ -1,3 +1,4 @@
+require_relative "space_parser"
 require_relative "comma_parser"
 
 puts "Welcome to the file parser"
@@ -7,9 +8,9 @@ puts "Welcome to the file parser"
 # end
 
 
-# def parse_space_delimited
-#   read_file("assets/space.txt", SPACE_DELIMITER)
-# end
+def parse_space_delimited
+  SpaceParser.new("assets/space.txt").parse 
+end
 
 def parse_comma_delimited
   CommaParser.new("assets/comma.txt").parse
@@ -29,7 +30,7 @@ end
 
 [
   # parse_pipe_delimited,
-  # parse_space_delimited,
+  parse_space_delimited,
   parse_comma_delimited
 ].flatten.sort{ |a, b| [a.gender, a.last_name] <=> [b.gender, b.last_name] }.map do |person|
   print_person(person)
