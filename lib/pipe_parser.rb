@@ -20,7 +20,7 @@ class PipeParser
         middle_initial: row[2],
         gender: row[3],
         favorite_color: row[4],
-        date_of_birth: Date.strptime(row[5], "%m-%d-%Y").strftime("%-m/%d/%Y")
+        date_of_birth: Date.strptime(row[5], "%m-%d-%Y").strftime("%_m/%-d/%Y")
       )
     end
   end

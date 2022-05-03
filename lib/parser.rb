@@ -36,3 +36,11 @@ end
 ].flatten.sort{ |a, b| [a.gender, a.last_name] <=> [b.gender, b.last_name] }.map do |person|
   print_person(person)
 end
+puts 
+[
+  parse_pipe_delimited,
+  parse_space_delimited,
+  parse_comma_delimited
+].flatten.sort{ |a, b| [a.date_of_birth, a.last_name] <=> [b.date_of_birth, b.last_name] }.map do |person|
+  print_person(person)
+end

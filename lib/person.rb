@@ -22,5 +22,3 @@ class Person
     @favorite_color = favorite_color
   end
 end
-
-# @gender = gender.gsub(/\bF\b/, 'Female')  @gender = gender.gsub(/\bM\b/, 'Male')

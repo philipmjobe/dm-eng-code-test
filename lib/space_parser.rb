@@ -19,7 +19,7 @@ class SpaceParser
         first_name: row[1],
         middle_initial: row[2],
         gender: row[3],
-        date_of_birth: Date.strptime(row[4], "%m-%d-%Y").strftime("%-m/%d/%Y"),
+        date_of_birth: Date.strptime(row[4], "%m-%d-%Y").strftime("%_m/%-d/%Y"),
         favorite_color: row[5]
       )
     end
