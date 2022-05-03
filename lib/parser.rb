@@ -1,11 +1,12 @@
+require_relative "pipe_parser"
 require_relative "space_parser"
 require_relative "comma_parser"
 
 puts "Welcome to the file parser"
 
-# def parse_pipe_delimited
-#   read_file("assets/pipe.txt", PIPE_DELIMITER)
-# end
+def parse_pipe_delimited
+  PipeParser.new("assets/pipe.txt").parse
+end
 
 
 def parse_space_delimited
@@ -29,7 +30,7 @@ def print_person(person)
 end
 
 [
-  # parse_pipe_delimited,
+  parse_pipe_delimited,
   parse_space_delimited,
   parse_comma_delimited
 ].flatten.sort{ |a, b| [a.gender, a.last_name] <=> [b.gender, b.last_name] }.map do |person|
