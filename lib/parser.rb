@@ -26,7 +26,7 @@ def print_person(person)
     person.gender,
     person.date_of_birth,
     person.favorite_color
-  ].compact.join(" "))
+  ].values_at(0, 1, 3, 4, 5).compact.join(" "))
 end
 
 [

@@ -17,8 +17,10 @@ class Person
     @last_name = last_name
     @first_name = first_name
     @middle_initial = middle_initial
-    @gender = gender
+    @gender = gender.gsub(/\bF\b/, 'Female').gsub(/\bM\b/, 'Male')
     @date_of_birth = date_of_birth
     @favorite_color = favorite_color
   end
 end
+
+# @gender = gender.gsub(/\bF\b/, 'Female')  @gender = gender.gsub(/\bM\b/, 'Male')
